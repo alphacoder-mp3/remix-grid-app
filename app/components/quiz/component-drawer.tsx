@@ -14,7 +14,7 @@ export const ComponentDrawer = ({ items, onDragStart }: Props) => (
           key={item.id}
           draggable
           onDragStart={() => onDragStart(item)}
-          className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white hover:bg-gray-50 cursor-move"
+          className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-gray-800 hover:bg-gray-600 cursor-move"
         >
           {item.type === 'timer' && <Timer className="w-6 h-6" />}
           {item.type === 'image' && <ImageIcon className="w-6 h-6" />}

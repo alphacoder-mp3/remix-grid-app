@@ -1,15 +1,12 @@
+// File: app/routes/_index.tsx
 import { json } from '@remix-run/node';
-import { Link, useLoaderData } from '@remix-run/react';
+import { Form, Link, useLoaderData } from '@remix-run/react';
 import { Button } from '~/components/ui/button';
+import { getQuizzes } from '~/models/quiz.server';
 
 export const loader = async () => {
-  // In a real app, fetch list of quizzes from database
-  return json({
-    quizzes: [
-      { id: '1', title: 'Sample Quiz 1' },
-      { id: '2', title: 'Sample Quiz 2' },
-    ],
-  });
+  const quizzes = await getQuizzes(); // Add this function to quiz.server.ts
+  return json({ quizzes });
 };
 
 export default function Index() {
@@ -20,9 +17,11 @@ export default function Index() {
       <div className="max-w-4xl mx-auto">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold">Quiz Builder</h1>
-          <Button asChild>
-            <Link to="/quiz/admin">Create New Quiz</Link>
-          </Button>
+          <Form method="post" action="/quiz/new">
+            <Button type="submit" className="bg-transparent">
+              Create New Quiz
+            </Button>
+          </Form>
         </div>
 
         <div className="grid gap-4">

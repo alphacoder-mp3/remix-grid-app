@@ -19,6 +19,10 @@ let QUIZZES: Quiz[] = [
   },
 ];
 
+export async function getQuizzes(): Promise<Quiz[]> {
+  return QUIZZES;
+}
+
 export async function getQuiz(id: string): Promise<Quiz | null> {
   return QUIZZES.find(quiz => quiz.id === id) || null;
 }

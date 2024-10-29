@@ -17,7 +17,7 @@ export default function QuizView() {
   const quiz = useLoaderData<typeof loader>();
 
   return (
-    <div className="min-h-screen bg-gray-800 p-4">
+    <div className="min-h-screen bg-gray-800 p-4 text-white">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-2xl font-bold mb-6">{quiz.title}</h1>
         <GridCanvas

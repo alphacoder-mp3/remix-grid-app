@@ -20,13 +20,13 @@ export const QuizComponent = ({
     switch (component.type) {
       case 'progress':
         return (
-          <div className="h-2 bg-blue-200 rounded-full">
+          <div className="h-2 bg-blue-200 rounded-full mt-6">
             <div className="h-full w-1/2 bg-blue-600 rounded-full"></div>
           </div>
         );
       case 'timer':
         return (
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 mt-6">
             <Timer className="w-4 h-4" /> 30:00
           </div>
         );
@@ -38,7 +38,7 @@ export const QuizComponent = ({
         );
       case 'image':
         return (
-          <div className="aspect-video bg-gray-100 flex items-center justify-center">
+          <div className="aspect-video bg-gray-600 flex items-center justify-center">
             <ImageIcon className="w-8 h-8 text-gray-400" />
           </div>
         );
@@ -46,7 +46,7 @@ export const QuizComponent = ({
         return (
           <div className="grid grid-cols-2 gap-2">
             {['Paris', 'London', 'Berlin', 'Madrid'].map((option, i) => (
-              <Button key={i} variant="outline" className="w-full">
+              <Button key={i} variant="outline" className="w-full bg-black">
                 {option}
               </Button>
             ))}
@@ -62,7 +62,7 @@ export const QuizComponent = ({
       className={`
         col-span-${component.settings?.size?.width || 2}
         row-span-${component.settings?.size?.height || 2}
-        p-2 bg-white rounded-lg shadow-sm
+        p-2 bg-neutral-800 rounded-lg shadow-sm text-white
         relative
       `}
     >
@@ -70,7 +70,7 @@ export const QuizComponent = ({
         <Button
           variant="outline"
           size="sm"
-          className="absolute -top-2 -right-2 z-10"
+          className="absolute -top-2 -right-2 z-10 bg-transparent"
           onClick={() => onDelete?.(component.id)}
         >
           ×

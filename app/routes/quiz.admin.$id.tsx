@@ -95,10 +95,10 @@ export default function QuizAdmin() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-800 text-white">
       <div className="flex">
         {/* Desktop Sidebar */}
-        <div className="hidden lg:block w-64 bg-white border-r border-gray-200 min-h-[calc(100vh-64px)]">
+        <div className="hidden lg:block w-64 bg-gray-700 border-r border-gray-200 min-h-[calc(100vh-64px)]">
           <ComponentDrawer
             items={draggableItems}
             onDragStart={item => {
