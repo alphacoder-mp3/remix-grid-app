@@ -228,8 +228,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 
 1. Clone the repository
 2. Install dependencies: `npm install`
-3. Copy `.env.example` to `.env` and configure
-4. Run development server: `npm run dev`
+3. Run development server: `npm run dev`
 
 ## Contributing
 
